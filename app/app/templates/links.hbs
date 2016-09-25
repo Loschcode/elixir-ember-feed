@@ -1,9 +1,22 @@
-<h2>Links</h2>
+<!-- If want to use mixins, no need to add classes -->
+<div class="container">
 
-{{#each model.links as |link|}}
-  <h3>{{link.title}}</h3>
-  <p>
-  {{ link.description }}
-  </p>
-  <a href="{{link.url}}">More</a>
-{{/each}}
+  <div class="row row-full">
+    <div class="gr-3 gr-12@mobile anystyle">
+        <!-- Side Header -->
+        HEADER
+    </div>
+    <div class="gr-9">
+        <!-- Content -->
+
+        {{#each model.links as |link|}}
+
+          <div class="row">
+            <h3><a href="{{link.url}}">{{link.title}}</a></h3>
+          </div>
+
+        {{/each}}
+
+    </div>
+  </div>
+</div>

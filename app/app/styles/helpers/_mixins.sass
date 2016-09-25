@@ -1,0 +1,27 @@
+// ===========================================================
+// Breakpoint
+// ===========================================================
+//
+// Useful mixin to manage the responsive of your styles.
+//
+// @param {String} $class - xs, sm, md, lg
+//
+// @example sass - Basic usage
+//
+//  .something
+//    width: 70%
+//    +breakpoint(xs)
+//      width: 100%
+//
+=breakpoint($class)
+
+  @if $class == mobile
+    @media (max-width: 991px)
+      @content
+
+  @else if $class == computer
+    @media (min-width: 980px)
+      @content
+
+  @else
+    @warn "Breakpoint mixin supports: mobile, computer"
