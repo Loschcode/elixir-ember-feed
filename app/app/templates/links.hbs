@@ -1,10 +1,13 @@
-<!-- If want to use mixins, no need to add classes -->
 <div class="container">
 
+  <!-- Header -->
   <div class="row row-full">
 
-    <!-- Side Header -->
-    <div class="gr-3 gr-12@mobile gr-12@tablet header">
+    <div class="header gr-12">
+
+      <div class="row">
+
+        <div class="gr-8 push-2" style="background-color:red">
 
       <!-- Author -->
       <div class="header__author">
@@ -24,17 +27,28 @@
 
     </div>
 
-    <!-- Content -->
-    <div class="gr-9">
-
-      {{#each model.links as |link|}}
-
-      <div class="row">
-        <h3><a href="{{link.url}}">{{link.title}}</a></h3>
-      </div>
-
-      {{/each}}
+    </div>
 
     </div>
+
+  </div>
+
+  <!-- Content -->
+  <div class="row">
+
+      <!-- Content -->
+      <div class="gr-12">
+
+        {{#each model.links as |link|}}
+
+        <div class="row">
+          <h3><a href="{{link.url}}">{{link.title}}</a></h3>
+        </div>
+
+        {{/each}}
+
+      </div>
+
+
   </div>
 </div>
