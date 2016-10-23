@@ -4,11 +4,11 @@
 
   text-align: center
   font-family: sans-serif
-  background-color: $color-dark-background
-  color: $color-white-text
+  background-color: $color-dark
+  color: $color-white
 
   +part(inside)
-    padding: 1.5em
+    padding: 2em
 
   +part(author)
     text-transform: uppercase
@@ -18,7 +18,12 @@
   +part(summary)
     font-weight: 300
     color: $color-grey
-    font-size: 1.5em
+    font-size: 1.6em
 
   +part(links)
-    font-size: 1em
+    padding-top: 0.5em
+    font-size: 1.2em
+    a
+      color: $color-grey
+      &:hover
+        color: $color-white
