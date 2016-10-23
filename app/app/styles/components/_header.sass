@@ -2,12 +2,18 @@
 
   -webkit-font-smoothing: antialiased
 
+  text-align: center
   font-family: sans-serif
   background-color: $color-dark-background
   color: $color-white-text
-  
+
+  +part(inside)
+    padding: 1.5em
+
   +part(author)
     text-transform: uppercase
+    h1
+      margin: 0
 
   +part(summary)
     font-weight: 300
