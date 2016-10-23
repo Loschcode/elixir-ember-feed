@@ -3,7 +3,7 @@
   <!-- Header -->
   <div class="row row-full">
 
-    <div class="header gr-12">
+    <div class="header">
 
       <div class="row">
 
@@ -33,9 +33,9 @@
             </div>
           </div>
 
-      </div>
+        </div>
 
-    </div>
+      </div>
 
     </div>
 
@@ -44,18 +44,40 @@
   <!-- Content -->
   <div class="row">
 
-      <!-- Content -->
-      <div class="gr-12">
+    <!-- Content -->
+    <div class="gr-11 gr-centered">
+
+      <div class="links">
+
+        <div class="row">
+          <div class="links__header">
+            <div class="gr-10">
+            <h2>My timeline of interest</h2>
+          </div>
+          </div>
+        </div>
 
         {{#each model.links as |link|}}
 
-        <div class="row">
-          <h3><a href="{{link.url}}">{{link.title}}</a></h3>
-        </div>
+          <div class="row">
+            <div class="links__title">
+
+              <div class="gr-10">
+                <h3><a href="{{link.url}}">{{link.title}}</a></h3>
+              </div>
+              <div class="gr-2">
+                DATE
+              </div>
+
+            </div>
+          </div>
+
 
         {{/each}}
 
       </div>
+
+    </div>
 
 
   </div>
