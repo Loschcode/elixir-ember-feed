@@ -13,6 +13,8 @@ defmodule FeedApi.LinkView do
     %{id: link.id,
       title: link.title,
       description: link.description,
-      url: link.url}
+      url: link.url,
+      inserted_at: link.inserted_at,
+      updated_at: link.updated_at}
   end
 end
