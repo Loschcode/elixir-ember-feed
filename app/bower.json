@@ -5,6 +5,7 @@
     "ember-cli-shims": "0.1.1",
     "gridle": "^2.0.48",
     "csstyle": "^1.5.0",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "blueimp-md5": "2.1.0"
   }
 }
