@@ -24,6 +24,7 @@ module.exports = function(defaults) {
   //
   app.import('bower_components/gridle/css/grid.css');
   app.import('bower_components/gridle/js/gridle-full.min.js');
-
+  app.import('bower_components/moment/moment.js');
+  
   return app.toTree();
 };
