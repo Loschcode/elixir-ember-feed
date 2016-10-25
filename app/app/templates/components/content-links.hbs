@@ -1,0 +1,24 @@
+{{#each links as |link|}}
+
+  <div class="row">
+    <div class="links__title">
+
+      <div class="gr-10">
+        <h3>
+          <a href="{{resolve-link link}}">
+          {{link.title}}
+            <span class="links__date">
+              {{relative-date link.inserted_at}}
+            </span>
+          </a>
+        </h3>
+      </div>
+
+      <div class="gr-2">
+        {{gravatar-image email="laurent.schaffner.code@gmail.com" class="links__photo" size="50"}}
+      </div>
+
+    </div>
+  </div>
+
+{{/each}}
