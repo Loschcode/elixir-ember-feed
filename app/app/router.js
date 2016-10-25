@@ -7,9 +7,23 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('links');
-  this.route('link', { path: '/links/:link_id' });
-
+  this.route('links', function() {
+    this.route('show', {path: '/:link_id'});
+  });
 });
 
 export default Router;
+
+// EXAMPLE
+// this.route('customers', function() {
+//     this.route('new');
+//     this.route('edit', {
+//       path: '/:customer_id/edit'
+//     });
+//     this.route('products', {
+//       path: '/:customer_id/products'
+//     }, function() {
+//       this.route('new');
+//     });
+//
+//   });
