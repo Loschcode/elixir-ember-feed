@@ -6,7 +6,7 @@
 
       <div class="row">
         <div class="header__prelinks">
-          <a href="#">MY RESUME</a> | <a href="#">JOBS</a>
+          <a href="#">MY RESUME</a> | <a href="mailto:laurent.schaffner.jobs@gmail.com">JOBS</a>
         </div>
       </div>
 
@@ -47,7 +47,9 @@
         {{content-links-header}}
 
         <!-- Links -->
-        {{content-links links=model.links}}
+        {{#each model.links as |link|}}
+          {{content-links link=link}}
+        {{/each}}
 
       </div>
 

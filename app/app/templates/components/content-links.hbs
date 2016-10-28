@@ -1,16 +1,27 @@
-{{#each links as |link|}}
 
   <div class="row">
     <div class="links__title">
 
       <div class="gr-10">
         <h3>
-          <a href="{{resolve-link link}}">
-          {{link.title}}
+
+          {{#if link.description}}
+          {{#link-to "links.show" link.id}}
+            {{link.title}}
+            <span class="links__date">
+              {{relative-date link.inserted_at}}
+            </span>
+          {{/link-to}}
+          {{else}}
+          <a href="{{link.url}}">
+            {{link.title}}
             <span class="links__date">
               {{relative-date link.inserted_at}}
             </span>
           </a>
+          {{/if}}
+
+          {{ form-c }}
         </h3>
       </div>
 
@@ -20,5 +31,3 @@
 
     </div>
   </div>
-
-{{/each}}
