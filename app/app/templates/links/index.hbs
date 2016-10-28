@@ -1,59 +1,16 @@
-<div class="container">
-  <!-- Header -->
-  <div class="row row-full">
+<!-- Content -->
+<div class="gr-11 gr-centered">
 
-    <div class="header">
+  <div class="links">
 
-      <div class="row">
-        <div class="header__prelinks">
-          <a href="#">MY RESUME</a> | <a href="mailto:laurent.schaffner.jobs@gmail.com">JOBS</a>
-        </div>
-      </div>
+    <!-- Links header -->
+    {{content-links-header}}
 
-      <div class="row">
-
-        <div class="gr-8 gr-centered">
-
-          <div class="header__inside">
-
-            <!-- Author -->
-            {{header-author}}
-
-            <!-- Summary -->
-            {{header-summary}}
-
-            <!-- Links -->
-            {{header-links}}
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <!-- Links -->
+    {{#each model.links as |link|}}
+      {{content-links link=link}}
+    {{/each}}
 
   </div>
 
-  <!-- Content -->
-  <div class="row">
-
-    <!-- Content -->
-    <div class="gr-11 gr-centered">
-
-      <div class="links">
-
-        <!-- Links header -->
-        {{content-links-header}}
-
-        <!-- Links -->
-        {{#each model.links as |link|}}
-          {{content-links link=link}}
-        {{/each}}
-
-      </div>
-
-    </div>
-
-  </div>
 </div>
