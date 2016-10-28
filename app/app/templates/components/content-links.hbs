@@ -4,24 +4,7 @@
 
       <div class="gr-10">
         <h3>
-
-          {{#if link.description}}
-          {{#link-to "links.show" link.id}}
-            {{link.title}}
-            <span class="links__date">
-              {{relative-date link.inserted_at}}
-            </span>
-          {{/link-to}}
-          {{else}}
-          <a href="{{link.url}}">
-            {{link.title}}
-            <span class="links__date">
-              {{relative-date link.inserted_at}}
-            </span>
-          </a>
-          {{/if}}
-
-          {{ form-c }}
+          {{link-title link=link}}
         </h3>
       </div>
 
