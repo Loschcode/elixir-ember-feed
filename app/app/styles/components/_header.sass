@@ -5,6 +5,14 @@
   background-color: $color-dark
   color: $color-white
 
+  +part(prelinks)
+    text-align: right
+    margin-right: 1em
+    margin-top: 0.3em
+    text-transform: uppercase
+    font-size: 0.9em
+    +header-links
+
   +part(inside)
     padding: 2em
 
@@ -21,7 +29,4 @@
   +part(links)
     padding-top: 0.5em
     font-size: 1.2em
-    a
-      color: $color-grey
-      &:hover
-        color: $color-white
+    +header-links
