@@ -16,17 +16,19 @@
 
           <div class="header__inside">
 
-            <!-- Author -->
-            {{header-author}}
+            {{#link-to 'application'}}
+              <!-- Author -->
+              {{header-author}}
 
-            <!-- Summary -->
-            {{header-summary}}
+              <!-- Summary -->
+              {{header-summary}}
+            {{/link-to}}
 
             <!-- Links -->
             {{header-links}}
 
           </div>
-
+          
         </div>
 
       </div>

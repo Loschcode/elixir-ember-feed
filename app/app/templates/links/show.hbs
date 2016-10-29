@@ -1,13 +1,22 @@
 <div class="link">
 
+  <!-- Title -->
   <h1>{{model.link.title}}</h1>
 
   <div class="link__date">
     {{relative-date model.link.inserted_at}}
   </div>
 
+  <!-- Description -->
   <p>
     {{model.link.description}}
   </p>
+
+  <!-- Bottom -->
+  <div class="link__bottom">
+    {{#if model.link.url}}
+      <a href="{{model.link.url}}">Source</a>
+    {{/if}}
+  </div>
 
 </div>
