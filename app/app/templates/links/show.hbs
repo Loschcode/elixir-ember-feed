@@ -1,7 +1,13 @@
-<h1>{{model.link.title}}</h1>
+<div class="link">
 
-{{relative-date month.link.inserted_at}}
+  <h1>{{model.link.title}}</h1>
 
-<p>
-  {{model.link.description}}
-</p>
+  <div class="link__date">
+    {{relative-date model.link.inserted_at}}
+  </div>
+
+  <p>
+    {{model.link.description}}
+  </p>
+
+</div>
