@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('links', function() {
     this.route('show', {path: '/:link_id'});
   });
+  this.route('resume');
 });
 
 export default Router;
