@@ -6,6 +6,8 @@ defmodule FeedApi.Repo.Migrations.CreateLink do
       add :title, :string
       add :description, :text
       add :url, :string
+      add :source, :string
+      add :published_at, :datetime
 
       timestamps()
     end

@@ -15,11 +15,17 @@ defmodule Fixtures do
     FeedApi.Repo.insert! %FeedApi.Link{
       title: FakerElixir.Name.title,
       description: FakerElixir.Lorem.sentences(3..5),
-      url: FakerElixir.Internet.url
+      url: FakerElixir.Internet.url,
+      source: "string",
+      published_at: FakerElixir.Date.backward(1..50) |> Ecto.DateTime.cast |> elem(1)
+      # {:ok, published_at} = FakerElixir.Date.backward(1..50) |> Ecto.DateTime.cast
     }
   end
+  # def clear do
+  #   FeedApi.Repo.delete_all FeedApi.Link
+  # end
 end
 
-
+#Fixtures.clear
 posts = Stream.repeatedly(fn -> Fixtures.link end)
 posts |> Enum.take(20)
