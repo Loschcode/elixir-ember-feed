@@ -1,5 +1,7 @@
 +component(resume)
 
+  margin-bottom: 2em
+
   +part(summary)
 
   +part(skill-sets)
@@ -12,15 +14,24 @@
         margin-left: 2em
         font-weight: normal
 
+  +part(experience)
+    h2
+      margin: 0
+    h3
+      margin-top: 0em
+
   +part(detail)
     color: $color-light-grey
     font-size: 15px
     font-weight: 500
     letter-spacing: 0.1em
-    margin-top: -1.5em
+    margin-top: -1em
 
   // links inside the article
   +part(bottom)
     a
       color: $color-dark
       text-decoration: underline
+
+    margin-bottom: 2em
+    text-align: right
