@@ -1,5 +1,17 @@
 +component(resume)
 
+  +part(summary)
+
+  +part(skill-sets)
+    ol
+      font-weight: bold
+      list-style-type: disc
+      li:first-child
+        margin-top: 0.5em
+      li
+        margin-left: 2em
+        font-weight: normal
+
   +part(date)
     color: $color-light-grey
     font-size: 15px
