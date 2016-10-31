@@ -2,14 +2,14 @@
   {{#link-to "links.show" link.id}}
     {{link.title}}
     <span class="links__date">
-      {{relative-date link.inserted_at}}
+      {{relative-date link.published_at}}
     </span>
   {{/link-to}}
 {{else}}
   <a href="{{link.url}}">
     {{link.title}}
     <span class="links__date">
-      {{relative-date link.inserted_at}}
+      {{relative-date link.published_at}}
     </span>
   </a>
 {{/if}}

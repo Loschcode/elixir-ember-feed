@@ -15,6 +15,11 @@ defmodule FeedApi.Link do
   @required_fields ~w(title description url source)
   @optional_fields ~w()
 
+  def sort_by_publication(query) do
+  from link in query,
+    order_by: [desc: link.published_at]
+  end
+
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """

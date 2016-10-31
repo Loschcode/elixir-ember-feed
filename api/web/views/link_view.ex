@@ -14,6 +14,8 @@ defmodule FeedApi.LinkView do
       title: link.title,
       description: link.description,
       url: link.url,
+      source: link.source,
+      published_at: link.published_at,
       inserted_at: link.inserted_at,
       updated_at: link.updated_at}
   end
