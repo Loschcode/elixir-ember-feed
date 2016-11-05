@@ -16,5 +16,5 @@ erl_crash.dump
 /config/prod.secret.exs
 
 # Environment variables
-/api/config/dev.exs
-/api/config/prod.exs
+/config/dev.exs
+/config/prod.exs

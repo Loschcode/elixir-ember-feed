@@ -1,6 +1,6 @@
 defmodule FeedApi.Endpoint do
   use Phoenix.Endpoint, otp_app: :feed_api
-
+  
   socket "/socket", FeedApi.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -38,6 +38,6 @@ defmodule FeedApi.Endpoint do
 
   # Corsica for cross-domain datas
   plug CORSPlug
-  
+
   plug FeedApi.Router
 end

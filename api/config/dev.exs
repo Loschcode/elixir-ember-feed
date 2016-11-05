@@ -13,7 +13,6 @@ config :feed_api, FeedApi.Endpoint,
   check_origin: false,
   watchers: []
 
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -29,3 +28,11 @@ config :feed_api, FeedApi.Repo,
   database: "feed",
   hostname: "localhost",
   pool_size: 10
+
+# Configures Twitter scrapper
+config :extwitter, :oauth, [
+  consumer_key: "XpJxYdMfgLjyFSUhpoCsJwrfV",
+  consumer_secret: "6vaXnm815waV1snR5y1JQR9tfN4SYGqIxPBfrVWPYbEfiuJaw2",
+  access_token: "736601629-1kPVfiEkWpsIdK8TZMtANCBkntGofsZuQtA3cLX5",
+  access_token_secret: "jKvZIJ6KjWHKf1iq2oySP3uMcl1LknzSSq2cLmd1yoQq9"
+]
