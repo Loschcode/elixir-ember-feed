@@ -19,7 +19,7 @@ defmodule FeedApi.Mixfile do
   def application do
     [mod: {FeedApi, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :faker_elixir_octopus]]
+                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,9 @@ defmodule FeedApi.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:faker_elixir_octopus, "> 0.0.0", only: :dev},
-     {:cors_plug, "~> 1.1"}]
+     {:cors_plug, "~> 1.1"},
+     {:oauth, github: "tim/erlang-oauth"},
+     {:extwitter, "0.7.2"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
