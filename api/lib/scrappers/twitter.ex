@@ -3,32 +3,27 @@ defmodule FeedApi.Scrappers.Twitter do
   @tweets 1
 
   @doc """
-  Some comments or something
+  We try to get the tweets from the timeline of the user
+  It will fetch all the needed datas and return them into an array
   """
   def dispatch! do
     ExTwitter.user_timeline(count: @tweets) |> fetch
   end
 
-  @doc """
-  We fetch the stream and return all the datas we need
-  Which are the message, link and date of creation of the Tweet
-  """
+  # we fetch the stream and return all the datas we need
+  # which are the message, link and date of creation of the Tweet
   defp fetch(stream) do
     for data <- stream do
       IO.inspect handle(data)
     end
   end
 
-  @doc """
-  Format the Tweet by removing the URL and triming it
-  """
+  # format the Tweet by removing the URL and triming it
   defp format(string) do
     String.replace(string, ~r/(?:f|ht)tps?:\/[^\s]+/, "") |> String.trim
   end
 
-  @doc """
-  Get only the data needed in our system from the Tweet
-  """
+  # get only the data needed in our system from the Tweet
   defp handle(data = %ExTwitter.Model.Tweet{}) do
     IO.inspect format(data.text)
     %{
@@ -38,18 +33,14 @@ defmodule FeedApi.Scrappers.Twitter do
     }
   end
 
-  @doc """
-  Get only the data needed in our system from the User
-  """
+  # get only the data needed in our system from the User
   defp handle(data = %ExTwitter.Model.User{}) do
     %{
       created_at: data.created_at
     }
   end
 
-  @doc """
-  Null Object Pattern
-  """
+  # null object pattern
   defp handle(_) do
     %{
       tweet: nil,
