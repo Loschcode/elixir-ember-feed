@@ -14,7 +14,7 @@ defmodule FeedApi.Scrappers.Twitter do
   # which are the message, link and date of creation of the Tweet
   defp fetch(stream) do
     for data <- stream do
-      IO.inspect handle(data)
+      handle(data)
     end
   end
 
@@ -25,10 +25,9 @@ defmodule FeedApi.Scrappers.Twitter do
 
   # get only the data needed in our system from the Tweet
   defp handle(data = %ExTwitter.Model.Tweet{}) do
-    IO.inspect format(data.text)
     %{
       message: format(data.text),
-      link: List.first(data.entities.urls).expanded_url,
+      link: data.entities.urls |> List.first |> Map.fetch(:expanded_url),
       date: handle(data.user).created_at
     }
   end

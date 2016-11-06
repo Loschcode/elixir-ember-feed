@@ -5,7 +5,7 @@ defmodule FeedApi.LinkController do
 
   def index(conn, _params) do
 
-    FeedApi.Scrappers.Twitter.dispatch!
+    FeedApi.Utils.Feeder.feed!
 
     links = Link |> Link.sort_by_publication() |> Repo.all()
     render(conn, "index.json", links: links)
