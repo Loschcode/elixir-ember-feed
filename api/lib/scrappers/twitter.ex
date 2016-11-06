@@ -2,7 +2,7 @@ defmodule FeedApi.Scrappers.Twitter do
 
   alias FeedApi.Scrappers.Utils.Format
 
-  @tweets 5000
+  @tweets 1000
 
   @doc """
   We try to get the tweets from the timeline of the user
