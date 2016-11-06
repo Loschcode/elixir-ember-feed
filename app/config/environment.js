@@ -12,10 +12,14 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      myself: {
+        github: 'https://github.com/Loschcode',
+        linkedin: 'http://fr.linkedin.com/in/laurentschaffner',
+        twitter: 'https://twitter.com/LoschCode',
+        facebook: 'https://www.facebook.com/LoSchaffner',
+        skype: 'callto:loschcode'
+      }
     }
   };
 
