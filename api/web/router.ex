@@ -8,6 +8,9 @@ defmodule FeedApi.Router do
   scope "/api", FeedApi do
     pipe_through :api
 
-    resources "/links", LinkController
+    get "/links/feed", LinkController, :feed
+    resources "/links", LinkController do
+    end
+
   end
 end

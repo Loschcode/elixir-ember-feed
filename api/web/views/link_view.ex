@@ -19,4 +19,9 @@ defmodule FeedApi.LinkView do
       inserted_at: link.inserted_at,
       updated_at: link.updated_at}
   end
+
+  def render("feed.json", %{}) do
+    %{}
+  end
+
 end

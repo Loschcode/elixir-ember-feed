@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('links/feed');
   this.route('links', function() {
     this.route('show', {path: '/:link_id'});
   });
@@ -14,17 +15,3 @@ Router.map(function() {
 });
 
 export default Router;
-
-// EXAMPLE
-// this.route('customers', function() {
-//     this.route('new');
-//     this.route('edit', {
-//       path: '/:customer_id/edit'
-//     });
-//     this.route('products', {
-//       path: '/:customer_id/products'
-//     }, function() {
-//       this.route('new');
-//     });
-//
-//   });

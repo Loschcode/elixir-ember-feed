@@ -4,9 +4,6 @@ defmodule FeedApi.LinkController do
   alias FeedApi.Link
 
   def index(conn, _params) do
-
-    FeedApi.Utils.Feeder.feed!
-
     links = Link |> Link.sort_by_publication() |> Repo.all()
     render(conn, "index.json", links: links)
   end
@@ -55,4 +52,13 @@ defmodule FeedApi.LinkController do
 
     send_resp(conn, :no_content, "")
   end
+
+  def feed(conn, _params) do
+    IO.puts "fuck this shit"
+    # we feed the database with
+    # new links if possible
+    FeedApi.Utils.Feeder.feed!
+    render(conn, "feed.json")
+  end
+
 end
