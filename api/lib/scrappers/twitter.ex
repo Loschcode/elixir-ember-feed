@@ -1,6 +1,6 @@
 defmodule FeedApi.Scrappers.Twitter do
 
-  @tweets 1
+  @tweets 100
 
   @doc """
   We try to get the tweets from the timeline of the user
@@ -29,6 +29,8 @@ defmodule FeedApi.Scrappers.Twitter do
   end
 
   defp format_date(date) do
+    # this has to be really improved
+    # or find another way to make it
     <<
     _::bytes-size(3),
     " ",
@@ -62,22 +64,31 @@ defmodule FeedApi.Scrappers.Twitter do
 
   end
 
-  # def format_date(date) do
-  #   IO.inspect date
-  #   IO.inspect Timex.parse(date, "{ISO:Extended}", :strftime)
-  #   # |> Ecto.DateTime.cast
-  #
-  # end
+  defp link(data) do
+    urls = data.entities.urls
+    IO.inspect urls
+    unless (urls == []) do
+      List.first(urls) |> Map.fetch(:expanded_url) |> format_link
+    end
+  end
+
+  defp date(data) do
+    data.created_at |> format_date
+  end
+
+  defp message(data) do
+    data.text |> format_message
+  end
 
   # get only the data needed in our system from the Tweet
   defp handle(data = %ExTwitter.Model.Tweet{}) do
-    IO.inspect handle(data.user).created_at |> format_date
     %{
-      message: data.text |> format_message,
-      link: data.entities.urls |> List.first |> Map.fetch(:expanded_url) |> format_link,
-      date: handle(data.user).created_at |> format_date
+      message: message(data),
+      link: link(data),
+      date: date(data)
     }
   end
+
 
   # get only the data needed in our system from the User
   defp handle(data = %ExTwitter.Model.User{}) do
