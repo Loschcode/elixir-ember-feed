@@ -20,22 +20,6 @@ defmodule FeedApi.Scrappers.Twitter do
     end
   end
 
-  defp link(data) do
-    urls = data.entities.urls
-    IO.inspect urls
-    unless (length(urls)) do
-      List.first(urls) |> Map.fetch(:expanded_url) |> Format.link
-    end
-  end
-
-  defp date(data) do
-    data.created_at |> Format.date
-  end
-
-  defp message(data) do
-    data.text |> Format.message
-  end
-
   # get only the data needed in our system from the Tweet
   defp handle(data = %ExTwitter.Model.Tweet{}) do
     %{
@@ -62,4 +46,20 @@ defmodule FeedApi.Scrappers.Twitter do
     }
   end
 
+  defp link(data) do
+    urls = data.entities.urls
+    IO.inspect urls
+    unless (length(urls)) do
+      List.first(urls) |> Map.fetch(:expanded_url) |> Format.link
+    end
+  end
+
+  defp date(data) do
+    data.created_at |> Format.date
+  end
+
+  defp message(data) do
+    data.text |> Format.message
+  end
+  
 end
