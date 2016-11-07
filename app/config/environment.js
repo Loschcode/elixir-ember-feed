@@ -12,6 +12,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+
     APP: {
       myself: {
         github: 'https://github.com/Loschcode',
