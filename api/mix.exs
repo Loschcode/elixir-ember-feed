@@ -40,7 +40,8 @@ defmodule FeedApi.Mixfile do
      {:cors_plug, "~> 1.1"},
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "0.7.2"},
-     {:timex, "~> 3.0"}]
+     {:timex, "~> 3.0"},
+     {:guardian, "~> 0.13.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
