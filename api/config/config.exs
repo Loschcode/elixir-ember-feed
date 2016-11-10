@@ -29,13 +29,7 @@ config :guardian, Guardian,
   issuer: "FeedApi",
   ttl: { 30, :days },
   verify_issuer: true, # optional
-  secret_key: { # this key was set manually and should be replaced in production
-    "crv":"P-521",
-    "d":"axDuTtGavPjnhlfnYAwkHa4qyfz2fdseppXEzmKpQyY0xd3bGpYLEF4ognDpRJm5IRaM31Id2NfEtDFw4iTbDSE",
-    "kty":"EC",
-    "x":"AL0H8OvP5NuboUoj8Pb3zpBcDyEJN907wMxrCy7H2062i3IRPF5NQ546jIJU3uQX5KN2QB_Cq6R_SUqyVZSNpIfC",
-    "y":"ALdxLuo6oKLoQ-xLSkShv_TA0di97I9V92sg1MKFava5hKGST1EKiVQnZMrN3HO8LtLT78SNTgwJSQHAXIUaA-lV"
-    },
+  secret_key: "4deJP8QzEVziW5ZSWDGxnE10dDEWQ2gYxxx19I1mrvnkSQ3DFllCsUcm9jC+3QXM",
   serializer: FeedApi.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
