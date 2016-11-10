@@ -19,7 +19,7 @@ defmodule FeedApi.Mixfile do
   def application do
     [mod: {FeedApi, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex]]
+                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,6 +41,7 @@ defmodule FeedApi.Mixfile do
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "0.7.2"},
      {:timex, "~> 3.0"},
+     {:comeonin, "~> 2.4"},
      {:guardian, "~> 0.13.0"}]
   end
 
