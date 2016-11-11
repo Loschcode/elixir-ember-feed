@@ -1,6 +1,5 @@
 defmodule FeedApi.LinkController do
   use FeedApi.Web, :controller
-
   alias FeedApi.Link
 
   def index(conn, _params) do
