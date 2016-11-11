@@ -42,6 +42,7 @@ defmodule FeedApi.Mixfile do
      {:extwitter, "0.7.2"},
      {:timex, "~> 3.0"},
      {:comeonin, "~> 2.4"},
+     {:ja_serializer, "~> 0.11.1"},
      {:guardian, "~> 0.13.0"}]
   end
 
