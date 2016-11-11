@@ -2,10 +2,12 @@ defmodule FeedApi.RegistrationController do
   use FeedApi.Web, :controller
   alias FeedApi.User
 
-  def create(conn, %{"data" => %{"type" => "users",
-    "attributes" => %{"email" => email,
-      "password" => password,
-      "password-confirmation" => password_confirmation}}}) do
+
+# curl -XPOST -H "Content-type: application/json" -d '{"data": {"type": "user", "attributes": {"email": "mike@example.com", "password": "abcde12345", "password_confirmation": "abcde12345"}}}' 'http://localhost:4000/api/register'
+
+  def create(conn, %{"data" => %{
+      "type" => "user",
+      "attributes" => %{"email" => email, "password" => password, "password_confirmation" => password_confirmation}}}) do
 
     changeset = User.changeset %User{}, %{email: email,
       password_confirmation: password_confirmation,
