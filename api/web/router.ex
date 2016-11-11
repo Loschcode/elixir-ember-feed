@@ -10,8 +10,8 @@ defmodule FeedApi.Router do
 
     # Registration
     post "register", RegistrationController, :create
-    # Route stuff to our SessionController
-    resources "session", SessionController, only: [:index]
+    # Login
+    post "token", SessionController, :create, as: :login
 
     # Links
     get "/links/feed", LinkController, :feed
