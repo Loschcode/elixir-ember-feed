@@ -29,7 +29,7 @@ defmodule FeedApi.Router do
 
   scope "/api", FeedApi do
     pipe_through :api_auth
-    
+
     get "/user/current", UserController, :current
   end
 
