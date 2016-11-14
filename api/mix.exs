@@ -19,7 +19,7 @@ defmodule FeedApi.Mixfile do
   def application do
     [mod: {FeedApi, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex, :comeonin, :edeliver, :phoenix_live_reload]]
+                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex, :comeonin, :edeliver]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,7 +36,7 @@ defmodule FeedApi.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:faker_elixir_octopus, "> 0.0.0", only: :dev},
+     {:faker_elixir_octopus, "> 0.0.0", only: [:dev, :test]},
      {:cors_plug, "~> 1.1"},
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "0.7.2"},
@@ -44,8 +44,8 @@ defmodule FeedApi.Mixfile do
      {:comeonin, "~> 2.4"},
      {:ja_serializer, "~> 0.11.1"},
      {:guardian, "~> 0.13.0"},
-     {:edeliver, git: "https://github.com/boldpoker/edeliver.git"},
-     {:phoenix_live_reload, "~> 1.0"},
+     {:edeliver, "~> 1.4.0"},
+     {:distillery, ">= 0.8.0", warn_missing: false},
      {:exrm, ">= 0.16.0", warn_missing: false}]
   end
 
