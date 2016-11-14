@@ -19,7 +19,7 @@ defmodule FeedApi.Mixfile do
   def application do
     [mod: {FeedApi, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex, :comeonin]]
+                    :phoenix_ecto, :postgrex, :faker_elixir_octopus, :extwitter, :timex, :comeonin, :edeliver, :phoenix_live_reload]]
   end
 
   # Specifies which paths to compile per environment.
@@ -43,7 +43,10 @@ defmodule FeedApi.Mixfile do
      {:timex, "~> 3.0"},
      {:comeonin, "~> 2.4"},
      {:ja_serializer, "~> 0.11.1"},
-     {:guardian, "~> 0.13.0"}]
+     {:guardian, "~> 0.13.0"},
+     {:edeliver, git: "https://github.com/boldpoker/edeliver.git"},
+     {:phoenix_live_reload, "~> 1.0"},
+     {:exrm, ">= 0.16.0", warn_missing: false}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
