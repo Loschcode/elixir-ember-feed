@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+APP="feed-api" # name of your release
+
+BUILD_HOST="pantoufles" # host where to build the release
+BUILD_USER="root" # local user at build host
+BUILD_AT="/git/feed-api/builds" # build directory on build host
+RELEASE_DIR="/git/feed-api/builds/rel/feed-api"
+RELEASE_VERSION=0.0.1
+
+STAGING_HOSTS="pantoufles" # staging / test hosts separated by space
+STAGING_USER="root" # local user at staging hosts
+TEST_AT="/test/feed-api" # deploy directory on staging hosts. default is DELIVER_TO
+
+PRODUCTION_HOSTS="pantoufles" # deploy / production hosts separated by space
+PRODUCTION_USER="root" # local user at deploy hosts
+DELIVER_TO="/opt/feed-api" # deploy directory on production hosts
