@@ -45,8 +45,7 @@ defmodule FeedApi.Mixfile do
      {:ja_serializer, "~> 0.11.1"},
      {:guardian, "~> 0.13.0"},
      {:edeliver, "~> 1.4.0"},
-     {:distillery, ">= 0.8.0", warn_missing: false},
-     {:exrm, ">= 0.16.0", warn_missing: false}]
+     {:distillery, ">= 0.8.0", warn_missing: false}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
