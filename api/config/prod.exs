@@ -22,23 +22,6 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :feed_api, FeedApi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "feed",
-  password: "feeding",
-  database: "feed",
-  hostname: "localhost",
-  pool_size: 10
-
-# Configures Twitter scrapper
-config :extwitter, :oauth, [
-  consumer_key: "XpJxYdMfgLjyFSUhpoCsJwrfV",
-  consumer_secret: "6vaXnm815waV1snR5y1JQR9tfN4SYGqIxPBfrVWPYbEfiuJaw2",
-  access_token: "736601629-1kPVfiEkWpsIdK8TZMtANCBkntGofsZuQtA3cLX5",
-  access_token_secret: "jKvZIJ6KjWHKf1iq2oySP3uMcl1LknzSSq2cLmd1yoQq9"
-]
-
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"

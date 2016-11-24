@@ -17,5 +17,3 @@ erl_crash.dump
 
 # Environment variables
 /config/dev.exs
-/config/prod.exs
-.deliver/releases/

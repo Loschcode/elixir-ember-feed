@@ -20,15 +20,6 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :feed_api, FeedApi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "feed",
-  password: "feeding",
-  database: "feed",
-  hostname: "localhost",
-  pool_size: 10
-
 # Configures Twitter scrapper
 config :extwitter, :oauth, [
   consumer_key: "XpJxYdMfgLjyFSUhpoCsJwrfV",
